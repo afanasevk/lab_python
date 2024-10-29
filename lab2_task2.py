@@ -5,8 +5,10 @@ increase = 0.03  # Ежемесячный рост цен
 money_capital = 0
 # TODO Рассчитайте подушку безопасности, чтобы протянуть 10 месяцев без долгов
 for i in range(months):
-    ostat = (((increase * i) * spend) + spend) - salary
-    print(ostat)
-    money_capital += ostat
+    deficit = spend - salary
+    money_capital += deficit
+    # увеличиваем расходы на слудующий месяц
+    spend *= 1 + increase
 
+money_capital = round(money_capital)
 print(f"Подушка безопасности, чтобы протянуть {months} месяцев без долгов:", money_capital)
