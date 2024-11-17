@@ -1,3 +1,5 @@
+import math
+
 salary = 5000  # Ежемесячная зарплата
 spend = 6000  # Траты за первый месяц
 months = 10  # Количество месяцев, которое планируется протянуть без долгов
@@ -10,5 +12,5 @@ for i in range(months):
     # увеличиваем расходы на слудующий месяц
     spend *= 1 + increase
 
-money_capital = round(money_capital + 0.5)
+money_capital = math.ceil(money_capital)
 print(f"Подушка безопасности, чтобы протянуть {months} месяцев без долгов:", money_capital)
